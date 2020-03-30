@@ -21,19 +21,22 @@ const GET_ANALYTICS_DASHBOARD_WIDGETS = "/api/analytics-dashboard-app/widgets";
 const GET_ACADEMY_COURSES = "/api/academy-app/courses";
 const GET_ACADEMY_CATEGORIES = "/api/academy-app/categories";
 const GET_CALENDAR_EVENTS = "/api/calendar-app/events";
+const GET_CHAT = "/api/chat/get-chat";
 const GET_CHAT_CONTACTS = "/api/chat/contacts";
 const GET_CHAT_USER = "/api/chat/user";
 const GET_CONTACTS_USER = "/api/contacts-app/user";
 const GET_E_COMMERCE_ORDERS = "/api/e-commerce-app/orders";
-const GET_E_COMMERCE_PRODUCTS = "/api/e-commerce-app/products";
+const GET_E_COMMERCE_PRODUCT = "/api/e-commerce-app/product";
 const GET_FAQ = "/api/faq";
 const GET_FILE_MANAGER_FILES = "/api/file-manager-app/files";
 const GET_KNOWLEDGE_BASE = "/api/knowledge-base";
 const GET_ICONS = "/api/icons";
+const GET_MAIL = "'/api/mail-app/mail";
+const GET_MAILS = "'/api/mail-app/mails";
 const GET_MAIL_FOLDERS = "/api/mail-app/folders";
 const GET_MAIL_FILTERS = "/api/mail-app/filters";
 const GET_MAIL_LABELS = "/api/mail-app/labels";
-const GET_NOTES_NOTES = "/api/notes-app/notes";
+const GET_NOTES = "/api/notes-app/notes";
 const GET_NOTES_LABELS = "/api/notes-app/labels";
 const GET_QUICKPANEL_DATA = "/api/quick-panel/data";
 const GET_PROFILE_ABOUT = "/api/profile/about";
@@ -41,8 +44,10 @@ const GET_PROFILE_TIMELINE = "/api/profile/timeline";
 const GET_PROFILE_PHOTOS_VIDEOS = "/api/profile/photos-videos";
 const GET_PROJECT_DASHBOARD_PROJECTS = "/api/project-dashboard-app/projects";
 const GET_PROJECT_DASHBOARD_WIDGETS = "/api/project-dashboard-app/widgets";
+const GET_SCRUMBOARD_BOARD = "/api/scrumboard-app/board";
 const GET_SCRUMBOARD_BOARDS = "/api/scrumboard-app/boards";
 const GET_SEARCH = "/api/search";
+const GET_TODO = "/api/todo-app/todos";
 const GET_TODO_FOLDERS = "/api/todo-app/folders";
 const GET_TODO_FILTERS = "/api/todo-app/filters";
 const GET_TODO_LABELS = "/api/todo-app/labels";
@@ -72,6 +77,7 @@ const POST_CHAT_SEND_MESSAGE = "/api/chat/send-message";
 const POST_CHAT_USER_DATA = "/api/chat/user/data";
 const POST_CONTACTS_ADD_CONTACT = "/api/contacts-app/add-contact";
 const POST_CONTACTS_REMOVE_CONTACT = "/api/contacts-app/remove-contact";
+const POST_CONTACTS_REMOVE_CONTACTS = "/api/contacts-app/remove-contacts";
 const POST_CONTACTS_TOGGLE_STARRED_CONTACT =
   "/api/contacts-app/toggle-starred-contact";
 const POST_CONTACTS_TOGGLE_STARRED_CONTACTS =
@@ -81,6 +87,8 @@ const POST_CONTACTS_SET_CONTACTS_STARRED =
 const POST_CONTACTS_SET_CONTACTS_UNSTARRED =
   "/api/contacts-app/set-contacts-unstarred";
 const POST_CONTACTS_UPDATE_CONTACT = "/api/contacts-app/update-contact";
+const POST_E_COMMERCE_ORDER_SAVE = "/api/e-commerce-app/order/save";
+const POST_E_COMMERCE_PRODUCT_SAVE = "/api/e-commerce-app/product/save";
 const POST_MAIL_SET_FOLDER = "/api/mail-app/set-folder";
 const POST_MAIL_TOGGLE_LABEL = "/api/mail-app/toggle-label";
 const POST_MAIL_UPDATE_MAIL = "/api/mail-app/update-mail";
@@ -136,19 +144,22 @@ const Const = {
     GET_ACADEMY_COURSES,
     GET_ACADEMY_CATEGORIES,
     GET_CALENDAR_EVENTS,
+    GET_CHAT,
     GET_CHAT_CONTACTS,
     GET_CHAT_USER,
     GET_CONTACTS_USER,
     GET_E_COMMERCE_ORDERS,
-    GET_E_COMMERCE_PRODUCTS,
+    GET_E_COMMERCE_PRODUCT,
     GET_FAQ,
     GET_FILE_MANAGER_FILES,
     GET_KNOWLEDGE_BASE,
     GET_ICONS,
+    GET_MAIL,
+    GET_MAILS,
     GET_MAIL_FOLDERS,
     GET_MAIL_FILTERS,
     GET_MAIL_LABELS,
-    GET_NOTES_NOTES,
+    GET_NOTES,
     GET_NOTES_LABELS,
     GET_QUICKPANEL_DATA,
     GET_PROFILE_ABOUT,
@@ -156,8 +167,10 @@ const Const = {
     GET_PROFILE_PHOTOS_VIDEOS,
     GET_PROJECT_DASHBOARD_PROJECTS,
     GET_PROJECT_DASHBOARD_WIDGETS,
+    GET_SCRUMBOARD_BOARD,
     GET_SCRUMBOARD_BOARDS,
     GET_SEARCH,
+    GET_TODO,
     GET_TODO_FOLDERS,
     GET_TODO_FILTERS,
     GET_TODO_LABELS
@@ -187,11 +200,14 @@ const Const = {
     POST_CHAT_USER_DATA,
     POST_CONTACTS_ADD_CONTACT,
     POST_CONTACTS_REMOVE_CONTACT,
+    POST_CONTACTS_REMOVE_CONTACTS,
     POST_CONTACTS_TOGGLE_STARRED_CONTACT,
     POST_CONTACTS_TOGGLE_STARRED_CONTACTS,
     POST_CONTACTS_SET_CONTACTS_STARRED,
     POST_CONTACTS_SET_CONTACTS_UNSTARRED,
     POST_CONTACTS_UPDATE_CONTACT,
+    POST_E_COMMERCE_ORDER_SAVE,
+    POST_E_COMMERCE_PRODUCT_SAVE,
     POST_MAIL_SET_FOLDER,
     POST_MAIL_TOGGLE_LABEL,
     POST_MAIL_UPDATE_MAIL,
@@ -225,13 +241,13 @@ const Const = {
 };
 const Categories = {
   // 1st Party
-  SESSION: {
+  Session: {
     DELETE: DELETE_SESSION,
     GET: GET_SESSION,
     POST: POST_SESSION,
     PUT: PUT_SESSION
   },
-  ACCOUNT: {
+  Account: {
     GET_ALL: GET_ACCOUNT_ALL,
     GET_ID_PAGE: GET_ACCOUNT_ID_PAGE,
     GET_DEFAULT: GET_ACCOUNT_DEFAULT,
@@ -239,10 +255,10 @@ const Categories = {
     POST_ID_PAGE: POST_ACCOUNT_ID_PAGE,
     POST_NEW: POST_ACCOUNT_NEW
   },
-  FEED: {
+  Feed: {
     GET: GET_FEED
   },
-  POST: {
+  Post: {
     DELETE_ID: DELETE_POST_ID,
     GET_ID: GET_POST_ID,
     POST: POST_POST,
@@ -250,66 +266,72 @@ const Categories = {
     POST_ID_REACT: POST_POST_ID_REACT,
     POST_ID_DONATE: POST_POST_ID_DONATE
   },
-  RUN_QUERY: {
+  RunQuery: {
     POST: POST_RUN_QUERY
   },
   // 2nd Party
   ...{
-    ANALYTICS_DASHBOARD: {
+    AnalyticsDashboard: {
       GET_WIDGETS: GET_ANALYTICS_DASHBOARD_WIDGETS
     },
-    ACADEMY: {
+    Academy: {
       GET_COURSES: GET_ACADEMY_COURSES,
       GET_CATEGORIES: GET_ACADEMY_CATEGORIES,
-      POST_ACADEMY_COURSE_SAVE: POST_COURSE_SAVE,
-      POST_ACADEMY_COURSE_UPDATE: POST_ACADEMY_COURSE_UPDATE
+      POST_COURSE_SAVE: POST_ACADEMY_COURSE_SAVE,
+      POST_COURSE_UPDATE: POST_ACADEMY_COURSE_UPDATE
     },
-    AUTH: {
+    Auth: {
       POST_REGISTER: POST_AUTH_REGISTER,
       POST_USER_UPDATE: POST_AUTH_USER_UPDATE
     },
-    CALENDAR: {
+    Calendar: {
       GET_EVENTS: GET_CALENDAR_EVENTS,
       POST_ADD_EVENT: POST_CALENDAR_ADD_EVENT,
       POST_REMOVE_EVENT: POST_CALENDAR_REMOVE_EVENT,
       POST_UPDATE_EVENT: POST_CALENDAR_UPDATE_EVENT
     },
-    CHAT: {
+    Chat: {
+      GET: GET_CHAT,
       GET_CONTACTS: GET_CHAT_CONTACTS,
       GET_USER: GET_CHAT_USER,
       POST_SEND_MESSAGE: POST_CHAT_SEND_MESSAGE,
       POST_USER_DATA: POST_CHAT_USER_DATA
     },
-    CONTACTS: {
-      GET_CONTACTS_USER: GET_USER,
+    Contacts: {
+      GET_USER: GET_CONTACTS_USER,
       POST_ADD_CONTACT: POST_CONTACTS_ADD_CONTACT,
       POST_REMOVE_CONTACT: POST_CONTACTS_REMOVE_CONTACT,
+      POST_REMOVE_CONTACTS: POST_CONTACTS_REMOVE_CONTACTS,
       POST_TOGGLE_STARRED_CONTACT: POST_CONTACTS_TOGGLE_STARRED_CONTACT,
       POST_TOGGLE_STARRED_CONTACTS: POST_CONTACTS_TOGGLE_STARRED_CONTACTS,
       POST_SET_CONTACTS_STARRED: POST_CONTACTS_SET_CONTACTS_STARRED,
       POST_SET_CONTACTS_UNSTARRED: POST_CONTACTS_SET_CONTACTS_UNSTARRED,
       POST_UPDATE_CONTACT: POST_CONTACTS_UPDATE_CONTACT
     },
-    DONATE: {
+    Donate: {
       PUT: PUT_DONATE
     },
-    E_COMMERCE: {
+    ECommerce: {
       GET_ORDERS: GET_E_COMMERCE_ORDERS,
-      GET_PRODUCTS: GET_E_COMMERCE_PRODUCTS
+      GET_PRODUCT: GET_E_COMMERCE_PRODUCT,
+      POST_ORDER_SAVE: POST_E_COMMERCE_ORDER_SAVE,
+      POST_PRODUCT_SAVE: POST_E_COMMERCE_PRODUCT_SAVE
     },
-    FAQ: {
+    Faq: {
       GET: GET_FAQ
     },
-    FILE_MANAGER: {
+    FileManager: {
       GET_FILES: GET_FILE_MANAGER_FILES
     },
-    KNOWLEDGE_BASE: {
+    KnowledgeBase: {
       GET: GET_KNOWLEDGE_BASE
     },
-    ICONS: {
+    Icons: {
       GET: GET_ICONS
     },
-    MAIL: {
+    Mail: {
+      GET: GET_MAIL,
+      GETS: GET_MAILS,
       GET_FOLDERS: GET_MAIL_FOLDERS,
       GET_FILTERS: GET_MAIL_FILTERS,
       GET_LABELS: GET_MAIL_LABELS,
@@ -317,27 +339,28 @@ const Categories = {
       POST_TOGGLE_LABEL: POST_MAIL_TOGGLE_LABEL,
       POST_UPDATE_MAIL: POST_MAIL_UPDATE_MAIL
     },
-    NOTES: {
-      GET_NOTES: GET_NOTES_NOTES,
+    Notes: {
+      GET: GET_NOTES,
       GET_LABELS: GET_NOTES_LABELS,
       POST_CREATE_NOTE: POST_NOTES_CREATE_NOTE,
       POST_REMOVE_NOTE: POST_NOTES_REMOVE_NOTE,
       POST_UPDATE_NOTE: POST_NOTES_UPDATE_NOTE,
       POST_UPDATE_LABELS: POST_NOTES_UPDATE_LABELS
     },
-    QUICKPANEL: {
+    QuickPanel: {
       GET_DATA: GET_QUICKPANEL_DATA
     },
-    PROFILE: {
+    Profile: {
       GET_ABOUT: GET_PROFILE_ABOUT,
       GET_TIMELINE: GET_PROFILE_TIMELINE,
       GET_PHOTOS_VIDEOS: GET_PROFILE_PHOTOS_VIDEOS
     },
-    PROJECT_DASHBOARD: {
+    ProjectDashboard: {
       GET_PROJECTS: GET_PROJECT_DASHBOARD_PROJECTS,
       GET_WIDGETS: GET_PROJECT_DASHBOARD_WIDGETS
     },
-    SCRUMBOARD: {
+    Scrumboard: {
+      GET_BOARD: GET_SCRUMBOARD_BOARD,
       GET_BOARDS: GET_SCRUMBOARD_BOARDS,
       POST_CARD_ORDER: POST_SCRUMBOARD_CARD_ORDER,
       POST_LIST_ORDER: POST_SCRUMBOARD_LIST_ORDER,
@@ -352,13 +375,14 @@ const Categories = {
       POST_CARD_REMOVE: POST_SCRUMBOARD_CARD_REMOVE,
       POST_CARD_UPDATE: POST_SCRUMBOARD_CARD_UPDATE
     },
-    SEARCH: {
+    Search: {
       GET: GET_SEARCH
     },
-    TODO: {
-      GET_FOLDERS,
-      GET_FILTERS,
-      GET_LABELS,
+    Todo: {
+      GET: GET_TODO,
+      GET_FOLDERS: GET_TODO_FOLDERS,
+      GET_FILTERS: GET_TODO_FILTERS,
+      GET_LABELS: GET_TODO_LABELS,
       POST_NEW_TODO: POST_TODO_NEW_TODO,
       POST_REMOVE_TODO: POST_TODO_REMOVE_TODO,
       POST_UPDATE_TODO: POST_TODO_UPDATE_TODO
