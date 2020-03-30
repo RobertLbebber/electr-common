@@ -1,0 +1,19 @@
+{
+  "name": "electr-common",
+  "version": "0.1.1",
+  "description": "This package will act as a common library between multiple components of the Electr Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertLbebber/electr-common.git"
+  },
+  "author": "Robert Bebber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertLbebber/electr-common/issues"
+  },
+  "homepage": "https://github.com/RobertLbebber/electr-common#readme"
+}
