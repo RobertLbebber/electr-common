@@ -1,4 +1,4 @@
-import Catalog from "endpoints/Catalog";
+import Cat from "endpoints/Catalog";
 
-export const Catalog = Catalog;
-export default { ApiCatalog: Catalog };
+export const Catalog = Cat;
+export default { ApiCatalog: Cat };
