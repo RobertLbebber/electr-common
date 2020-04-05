@@ -3,6 +3,7 @@
  */
 // 1st Party
 const DELETE_POST_ID = "/api/post/{postId}";
+const DELETE_SESSION = "/api/session";
 
 /**
  * GETS
@@ -241,17 +242,11 @@ const Const = {
 };
 const Categories = {
   // 1st Party
-  Session: {
-    DELETE: DELETE_SESSION,
-    GET: GET_SESSION,
-    POST: POST_SESSION,
-    PUT: PUT_SESSION
-  },
   Account: {
     GET_ALL: GET_ACCOUNT_ALL,
     GET_ID_PAGE: GET_ACCOUNT_ID_PAGE,
     GET_DEFAULT: GET_ACCOUNT_DEFAULT,
-    GET_GET_ME: GET_ACCOUNT_GET_ME,
+    GET_ME: GET_ACCOUNT_GET_ME,
     POST_ID_PAGE: POST_ACCOUNT_ID_PAGE,
     POST_NEW: POST_ACCOUNT_NEW
   },
@@ -268,6 +263,12 @@ const Categories = {
   },
   RunQuery: {
     POST: POST_RUN_QUERY
+  },
+  Session: {
+    DELETE: DELETE_SESSION,
+    GET: GET_SESSION,
+    POST: POST_SESSION,
+    PUT: PUT_SESSION
   },
   // 2nd Party
   ...{
