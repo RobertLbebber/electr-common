@@ -1,0 +1,66 @@
+{
+  "$id": "account-db/account",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "required": [
+    "password",
+    "firstName",
+    "lastName",
+    "profileImg",
+    "messages",
+    "creditCard"
+  ],
+  "encrypted": [
+    "password"
+  ],
+  "properties": {
+    "password": {
+      "type": "string",
+      "title": "The Id Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "561551bd7fe2ff461101c192"
+      ]
+    },
+    "firstName": {
+      "type": "string",
+      "title": "The Title Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Proident tempor est nulla irure ad est"
+      ]
+    },
+    "lastName": {
+      "type": "string",
+      "title": "The Notes Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum."
+      ]
+    },
+    "profileImg": {
+      "type": "string",
+      "title": "The Notes Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum."
+      ]
+    },
+    "messages": {
+      "type": "connection",
+      "title": "The Notes Schema",
+      "description": "An explanation about the purpose of this instance."
+    },
+    "creditCard": {
+      "$ref": "creditCard/properties/accountId",
+      "type": "collection",
+      "title": "The Notes Schema",
+      "description": "An explanation about the purpose of this instance."
+    }
+  }
+}
