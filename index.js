@@ -1,4 +1,6 @@
-import Cat from "./endpoints/Catalog";
+const Cat = require("./endpoints/Catalog");
+const Sch = require("./schemas/index");
 
 export const Catalog = Cat;
-export default { ApiCatalog: Cat };
+export const Schemas = Sch;
+export default { ApiCatalog: Catalog, DatabaseSchemas: Schemas };

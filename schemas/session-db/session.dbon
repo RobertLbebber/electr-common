@@ -1,0 +1,21 @@
+{
+  "id": "session-db/session",
+  "required": [
+    "accountId",
+    "emailAccountId"
+  ],
+  "properties": {
+    "emailAccountId": {
+      "$id": "#/properties/emailAccountId",
+      "$ref": "email-account-db/email-account",
+      "$via": "!/properties/email",
+      "type": "strict-link"
+    },
+    "accountId": {
+      "$id": "#/properties/accountId",
+      "$ref": "account-db/account",
+      "$via": "!/properties/id",
+      "type": "strict-link"
+    }
+  }
+}

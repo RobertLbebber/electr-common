@@ -28,7 +28,8 @@
         "object",
         "string",
         "collection",
-        "connection"
+        "loose-link",
+        "strict-link"
       ]
     },
     "stringArray": {
@@ -52,6 +53,7 @@
       "type": "string",
       "format": "uri-reference"
     },
+    "$via": { "type": "string" },
     "$comment": {
       "type": "string"
     },

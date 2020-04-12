@@ -1,0 +1,49 @@
+{
+  "id": "credit-card-db/credit-card",
+  "required": [
+    "serial",
+    "cardNumber",
+    "expMonth",
+    "expYear",
+    "cvv",
+    "accountId"
+  ],
+  "properties": {
+    "serial": {
+      "$id": "#/properties/serial",
+      "type": "string",
+      "title": "",
+      "description": ""
+    },
+    "cardNumber": {
+      "$id": "#/properties/cardNumber",
+      "type": "string",
+      "title": "",
+      "description": ""
+    },
+    "expMonth": {
+      "$id": "#/properties/expMonth",
+      "type": "string",
+      "title": "",
+      "description": ""
+    },
+    "expYear": {
+      "$id": "#/properties/expYear",
+      "type": "string",
+      "title": "",
+      "description": ""
+    },
+    "cvv": {
+      "$id": "#/properties/cvv",
+      "type": "string",
+      "title": "",
+      "description": ""
+    },
+    "accountId": {
+      "$id": "#/properties/accountId",
+      "$ref": "account-db/account",
+      "$via": "!/properties/id",
+      "type": "strict-link"
+    }
+  }
+}

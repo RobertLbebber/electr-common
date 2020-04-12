@@ -9,16 +9,25 @@
     "lastName",
     "profileImg",
     "messages",
-    "creditCard"
+    "primaryEmail"
   ],
   "encrypted": [
     "password"
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "title": "The Id Schema",
+      "description": "",
+      "default": "",
+      "examples": [
+        "561551bd7fe2ff461101c192"
+      ]
+    },
     "password": {
       "type": "string",
       "title": "The Id Schema",
-      "description": "An explanation about the purpose of this instance.",
+      "description": "",
       "default": "",
       "examples": [
         "561551bd7fe2ff461101c192"
@@ -27,7 +36,7 @@
     "firstName": {
       "type": "string",
       "title": "The Title Schema",
-      "description": "An explanation about the purpose of this instance.",
+      "description": "",
       "default": "",
       "examples": [
         "Proident tempor est nulla irure ad est"
@@ -35,8 +44,8 @@
     },
     "lastName": {
       "type": "string",
-      "title": "The Notes Schema",
-      "description": "An explanation about the purpose of this instance.",
+      "title": "",
+      "description": "",
       "default": "",
       "examples": [
         "Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum."
@@ -44,23 +53,33 @@
     },
     "profileImg": {
       "type": "string",
-      "title": "The Notes Schema",
-      "description": "An explanation about the purpose of this instance.",
+      "title": "",
+      "description": "",
       "default": "",
       "examples": [
         "Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum."
       ]
     },
+    "primaryEmail": {
+      "$ref": "email-account-db/email-account",
+      "$via": "!/properties/accountId",
+      "type": "strict-link",
+      "title": "",
+      "description": ""
+    },
     "messages": {
-      "type": "connection",
-      "title": "The Notes Schema",
-      "description": "An explanation about the purpose of this instance."
+      "$ref": "messages-db/messages",
+      "$via": "!/properties/accountId",
+      "type": "collection",
+      "title": "",
+      "description": ""
     },
     "creditCard": {
-      "$ref": "creditCard/properties/accountId",
+      "$ref": "credit-card-db/credit-card",
+      "$via": "!/properties/accountId",
       "type": "collection",
-      "title": "The Notes Schema",
-      "description": "An explanation about the purpose of this instance."
+      "title": "",
+      "description": ""
     }
   }
 }

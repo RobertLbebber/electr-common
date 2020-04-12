@@ -1,0 +1,42 @@
+{
+  "id": "email-account-db/email-account",
+  "required": [
+    "email"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Alice Freeman"
+      ]
+    },
+    "avatar": {
+      "$id": "#/properties/avatar",
+      "type": "string",
+      "title": "The Avatar Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "assets/images/avatars/alice.jpg"
+      ]
+    },
+    "email": {
+      "$id": "#/properties/email",
+      "type": "string",
+      "title": "The Email Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "alicefreeman@creapond.com"
+      ]
+    },
+    "accountId": {
+      "$id": "#/properties/accountId",
+      "$ref": "!/properties/id",
+      "type": "loose-link"
+    }
+  }
+}
