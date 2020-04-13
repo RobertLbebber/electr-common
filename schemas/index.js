@@ -1,26 +1,28 @@
-export let AccountDBON = require("./account/account.dbon");
-export let AnalyticsDashboardDBON = require("./analytics-dashboard-db/analytics-dashboard.dbon");
-export let AuthDBON = require("./auth-db/auth.dbon");
-export let CalendarDBON = require("./calendar-db/calendar.dbon");
-export let ChatDBON = require("./chat-db/chat.dbon");
-export let ContactsDBON = require("./contacts-db/contacts.dbon");
-export let CreditCardsDBON = require("./credit-cards-db/credit-cards.dbon");
-export let ECommerceDBON = require("./e-commerce-db/e-commerce.dbon");
-export let FaqDBON = require("./faq-db/faq.dbon");
-export let FileManagerDBON = require("./file-manager-db/file-manager.dbon");
-export let IconsDBON = require("./icons-db/icons.dbon");
-export let InvoiceDBON = require("./invoice-db/invoice.dbon");
-export let KnowledgeBaseDBON = require("./knowledge-base-db/knowledge-base.dbon");
-export let MailDBON = require("./mail-db/mail.dbon");
-export let NotesDBON = require("./notes-db/notes.dbon");
-export let ProfileDBON = require("./profile-db/profile.dbon");
-export let QuickPanelDBON = require("./quick-panel-db/quick-panel.dbon");
-export let ScrumboardDBON = require("./scrumboard-db/scrumboard.dbon");
-export let SearchDBON = require("./search-db/search.dbon");
-export let SessionDBON = require("./session-db/session.dbon");
-export let TodoDBON = require("./todo-db/todo.dbon");
+let AccountDBON = require("./account-db/account.db.json");
+let AnalyticsDashboardDBON = require("./analytics-dashboard-db/analytics-dashboard.db.json");
+let AuthDBON = require("./auth-db/auth.db.json");
+let CalendarDBON = require("./calendar-db/calendar.db.json");
+let ChatDBON = require("./chat-db/chat.db.json");
+let ContactsDBON = require("./contacts-db/contacts.db.json");
+let CreditCardsDBON = require("./credit-cards-db/credit-cards.db.json");
+let ECommerceDBON = require("./e-commerce-db/e-commerce.db.json");
+let FaqDBON = require("./faq-db/faq.db.json");
+let FileManagerDBON = require("./file-manager-db/file-manager.db.json");
+let IconsDBON = require("./icons-db/icons.db.json");
+let InvoiceDBON = require("./invoice-db/invoice.db.json");
+let KnowledgeBaseDBON = require("./knowledge-base-db/knowledge-base.db.json");
+let MailDBON = require("./mail-db/mail.db.json");
+let NotesDBON = require("./notes-db/notes.db.json");
+let ProfileDBON = require("./profile-db/profile.db.json");
+let QuickPanelDBON = require("./quick-panel-db/quick-panel.db.json");
+let ScrumboardDBON = require("./scrumboard-db/scrumboard.db.json");
+let SearchDBON = require("./search-db/search.db.json");
+let SessionDBON = require("./session-db/session.db.json");
+let TodoDBON = require("./todo-db/todo.db.json");
 
-export default {
+let Schema = require("db-json-schema.json");
+
+module.exports = {
   AccountDBON,
   AnalyticsDashboardDBON,
   AuthDBON,
@@ -42,4 +44,5 @@ export default {
   SearchDBON,
   SessionDBON,
   TodoDBON,
+  Schema,
 };

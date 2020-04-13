@@ -1,6 +1,6 @@
 {
   "name": "electr-common",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "This package will act as a common library between multiple components of the Electr Web Application",
   "main": "index.js",
   "scripts": {

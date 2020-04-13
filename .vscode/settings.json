@@ -1,12 +1,8 @@
 {
   "json.schemas": [
     {
-      "fileMatch": ["/*.dbon"],
-      "url": "./schemas/dbon-schema.json"
-    },
-    {
-      "fileMatch": ["/*.json"],
-      "url": "http://json-schema.org/draft-07/schema"
+      "fileMatch": ["/*.db.json"],
+      "url": "./schemas/db-json-schema.json"
     }
   ]
 }
