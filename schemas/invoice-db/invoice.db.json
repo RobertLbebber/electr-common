@@ -1,0 +1,289 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "required": [
+    "id",
+    "from",
+    "client",
+    "number",
+    "date",
+    "dueDate",
+    "services",
+    "subtotal",
+    "tax",
+    "discount",
+    "total"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["5725a6802d"]
+    },
+    "from": {
+      "$id": "#/properties/from",
+      "type": "object",
+      "title": "The From Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "title": "Fuse Inc.",
+          "email": "hello@fuseinc.com",
+          "address": "2810 Country Club Road Cranford, NJ 07016",
+          "phone": "+66 123 455 87",
+          "website": "www.fuseinc.com"
+        }
+      ],
+      "required": ["title", "address", "phone", "email", "website"],
+      "properties": {
+        "title": {
+          "$id": "#/properties/from/properties/title",
+          "type": "string",
+          "title": "The Title Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["Fuse Inc."]
+        },
+        "address": {
+          "$id": "#/properties/from/properties/address",
+          "type": "string",
+          "title": "The Address Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["2810 Country Club Road Cranford, NJ 07016"]
+        },
+        "phone": {
+          "$id": "#/properties/from/properties/phone",
+          "type": "string",
+          "title": "The Phone Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["+66 123 455 87"]
+        },
+        "email": {
+          "$id": "#/properties/from/properties/email",
+          "type": "string",
+          "title": "The Email Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["hello@fuseinc.com"]
+        },
+        "website": {
+          "$id": "#/properties/from/properties/website",
+          "type": "string",
+          "title": "The Website Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["www.fuseinc.com"]
+        }
+      }
+    },
+    "client": {
+      "$id": "#/properties/client",
+      "type": "object",
+      "title": "The Client Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "title": "John Doe",
+          "email": "johndoe@mail.com",
+          "address": "9301 Wood Street Philadelphia, PA 19111",
+          "phone": "+55 552 455 87"
+        }
+      ],
+      "required": ["title", "address", "phone", "email"],
+      "properties": {
+        "title": {
+          "$id": "#/properties/client/properties/title",
+          "type": "string",
+          "title": "The Title Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["John Doe"]
+        },
+        "address": {
+          "$id": "#/properties/client/properties/address",
+          "type": "string",
+          "title": "The Address Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["9301 Wood Street Philadelphia, PA 19111"]
+        },
+        "phone": {
+          "$id": "#/properties/client/properties/phone",
+          "type": "string",
+          "title": "The Phone Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["+55 552 455 87"]
+        },
+        "email": {
+          "$id": "#/properties/client/properties/email",
+          "type": "string",
+          "title": "The Email Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": ["johndoe@mail.com"]
+        }
+      }
+    },
+    "number": {
+      "$id": "#/properties/number",
+      "type": "string",
+      "title": "The Number Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["P9-0004"]
+    },
+    "date": {
+      "$id": "#/properties/date",
+      "type": "string",
+      "title": "The Date Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["Jul 19, 2019"]
+    },
+    "dueDate": {
+      "$id": "#/properties/dueDate",
+      "type": "string",
+      "title": "The Duedate Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["Aug 24, 2019"]
+    },
+    "services": {
+      "$id": "#/properties/services",
+      "type": "array",
+      "title": "The Services Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "items": {
+        "$id": "#/properties/services/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "total": "2880",
+            "title": "Prototype & Design",
+            "quantity": "240",
+            "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan, quam sed eleifend imperdiet.",
+            "unitPrice": "12.00",
+            "unit": "Hour",
+            "id": "1"
+          }
+        ],
+        "required": [
+          "id",
+          "title",
+          "detail",
+          "unit",
+          "unitPrice",
+          "quantity",
+          "total"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/properties/services/items/properties/id",
+            "type": "string",
+            "title": "The Id Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["1"]
+          },
+          "title": {
+            "$id": "#/properties/services/items/properties/title",
+            "type": "string",
+            "title": "The Title Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["Prototype & Design"]
+          },
+          "detail": {
+            "$id": "#/properties/services/items/properties/detail",
+            "type": "string",
+            "title": "The Detail Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan, quam sed eleifend imperdiet."
+            ]
+          },
+          "unit": {
+            "$id": "#/properties/services/items/properties/unit",
+            "type": "string",
+            "title": "The Unit Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["Hour"]
+          },
+          "unitPrice": {
+            "$id": "#/properties/services/items/properties/unitPrice",
+            "type": "string",
+            "title": "The Unitprice Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["12.00"]
+          },
+          "quantity": {
+            "$id": "#/properties/services/items/properties/quantity",
+            "type": "string",
+            "title": "The Quantity Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["240"]
+          },
+          "total": {
+            "$id": "#/properties/services/items/properties/total",
+            "type": "string",
+            "title": "The Total Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["2880"]
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "$id": "#/properties/subtotal",
+      "type": "string",
+      "title": "The Subtotal Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["8445"]
+    },
+    "tax": {
+      "$id": "#/properties/tax",
+      "type": "string",
+      "title": "The Tax Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["675.60"]
+    },
+    "discount": {
+      "$id": "#/properties/discount",
+      "type": "string",
+      "title": "The Discount Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["120.60"]
+    },
+    "total": {
+      "$id": "#/properties/total",
+      "type": "string",
+      "title": "The Total Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["9000"]
+    }
+  }
+}
