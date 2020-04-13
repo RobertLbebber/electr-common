@@ -1,5 +1,6 @@
 {
   "id": "credit-card-db/credit-card",
+  "table": "CreditCard",
   "required": [
     "serial",
     "cardNumber",

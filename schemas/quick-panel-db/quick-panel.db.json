@@ -1,8 +1,7 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://example.com/example.json",
+  "$id": "quick-panel-db/quick-panel",
   "type": "object",
-  "title": "The Root Schema",
+  "table": "QuickPanel",
   "description": "The root schema comprises the entire JSON document.",
   "required": ["notes", "events"],
   "properties": {

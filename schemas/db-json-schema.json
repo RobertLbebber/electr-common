@@ -76,6 +76,11 @@
       "type": "array",
       "items": true
     },
+    "table": {
+      "type": "string",
+      "example": "Account",
+      "description": "Name of the table this schema refers to"
+    },
     "multipleOf": {
       "type": "number",
       "exclusiveMinimum": 0

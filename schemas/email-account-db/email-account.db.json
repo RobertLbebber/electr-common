@@ -1,8 +1,7 @@
 {
   "id": "email-account-db/email-account",
-  "required": [
-    "email"
-  ],
+  "table": "EmailAccount",
+  "required": ["email"],
   "properties": {
     "name": {
       "$id": "#/properties/name",
@@ -10,9 +9,7 @@
       "title": "The Name Schema",
       "description": "An explanation about the purpose of this instance.",
       "default": "",
-      "examples": [
-        "Alice Freeman"
-      ]
+      "examples": ["Alice Freeman"]
     },
     "avatar": {
       "$id": "#/properties/avatar",
@@ -20,18 +17,14 @@
       "title": "The Avatar Schema",
       "description": "An explanation about the purpose of this instance.",
       "default": "",
-      "examples": [
-        "assets/images/avatars/alice.jpg"
-      ]
+      "examples": ["assets/images/avatars/alice.jpg"]
     },
     "email": {
       "$id": "#/properties/email",
       "type": "string",
       "title": "The Email Schema",
       "description": "An explanation about the purpose of this instance.",
-      "examples": [
-        "alicefreeman@creapond.com"
-      ]
+      "examples": ["alicefreeman@creapond.com"]
     },
     "accountId": {
       "$id": "#/properties/accountId",

@@ -1,7 +1,7 @@
 {
   "$id": "account-db/account",
   "type": "object",
-  "title": "The Root Schema",
+  "table": "Account",
   "description": "The root schema comprises the entire JSON document.",
   "required": [
     "password",
@@ -11,36 +11,28 @@
     "messages",
     "primaryEmail"
   ],
-  "encrypted": [
-    "password"
-  ],
+  "encrypted": ["password"],
   "properties": {
     "id": {
       "type": "string",
       "title": "The Id Schema",
       "description": "",
       "default": "",
-      "examples": [
-        "561551bd7fe2ff461101c192"
-      ]
+      "examples": ["561551bd7fe2ff461101c192"]
     },
     "password": {
       "type": "string",
       "title": "The Id Schema",
       "description": "",
       "default": "",
-      "examples": [
-        "561551bd7fe2ff461101c192"
-      ]
+      "examples": ["561551bd7fe2ff461101c192"]
     },
     "firstName": {
       "type": "string",
       "title": "The Title Schema",
       "description": "",
       "default": "",
-      "examples": [
-        "Proident tempor est nulla irure ad est"
-      ]
+      "examples": ["Proident tempor est nulla irure ad est"]
     },
     "lastName": {
       "type": "string",

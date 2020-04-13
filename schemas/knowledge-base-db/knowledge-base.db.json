@@ -1,8 +1,7 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://example.com/example.json",
+  "$id": "knowledge-base-db/knowledge-base",
   "type": "array",
-  "title": "The Root Schema",
+  "table": "KnowledgeBase",
   "description": "The root schema comprises the entire JSON document.",
   "items": {
     "$id": "#/items",

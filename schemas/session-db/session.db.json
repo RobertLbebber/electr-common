@@ -1,9 +1,7 @@
 {
   "id": "session-db/session",
-  "required": [
-    "accountId",
-    "emailAccountId"
-  ],
+  "table": "Session",
+  "required": ["accountId", "emailAccountId"],
   "properties": {
     "emailAccountId": {
       "$id": "#/properties/emailAccountId",
